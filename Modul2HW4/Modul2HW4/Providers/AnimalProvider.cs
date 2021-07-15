@@ -9,9 +9,9 @@ namespace Modul2HW4.Providers
 {
     public class AnimalProvider : IAnimalProvider
     {
-        public Animal[] GetAnimals()
+        public AnimalProvider()
         {
-            return new Animal[]
+            AllAnimals = new Animal[]
             {
                 new Feline
                 {
@@ -54,5 +54,7 @@ namespace Modul2HW4.Providers
                 }
             };
         }
+
+        public Animal[] AllAnimals { get; set; }
     }
 }

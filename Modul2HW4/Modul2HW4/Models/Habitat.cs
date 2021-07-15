@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modul2HW4.Servises.Abstractions
+namespace Modul2HW4.Models
 {
-    public interface IConfigService
+    public class Habitat
     {
-        public Config GetConfig();
+        public Animal[] AnimalsHabitat { get; set; }
     }
 }

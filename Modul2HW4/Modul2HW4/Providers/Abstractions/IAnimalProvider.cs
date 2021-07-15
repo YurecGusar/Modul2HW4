@@ -8,6 +8,6 @@ namespace Modul2HW4.Providers.Abstractions
 {
     public interface IAnimalProvider
     {
-        public Animal[] GetAnimals();
+        public Animal[] AllAnimals { get; set; }
     }
 }
