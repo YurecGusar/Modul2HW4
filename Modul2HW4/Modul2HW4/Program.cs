@@ -1,4 +1,10 @@
-﻿using System;
+﻿using System.Collections;
+using Microsoft.Extensions.DependencyInjection;
+using Modul2HW4.Extension;
+using Modul2HW4.Providers;
+using Modul2HW4.Providers.Abstractions;
+using Modul2HW4.Servises;
+using Modul2HW4.Servises.Abstractions;
 
 namespace Modul2HW4
 {
@@ -6,9 +12,15 @@ namespace Modul2HW4
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello World!");
+            var serviceProvider = new ServiceCollection()
+                .AddTransient<Starter>()
+                .AddSingleton<IAnimalService, AnimalService>()
+                .AddTransient<IAnimalProvider, AnimalProvider>()
+                .AddSingleton<IHabitatService, HabitatService>()
+                .AddSingleton<IConfigService, ConfigService>()
+                .BuildServiceProvider();
+            var start = serviceProvider.GetService<Starter>();
+            start.Run();
         }
     }
 }
