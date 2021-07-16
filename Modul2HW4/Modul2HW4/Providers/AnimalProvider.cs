@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Modul2HW4.Providers.Abstractions;
+using Modul2HW4.Servises.Abstractions;
 
 namespace Modul2HW4.Providers
 {
     public class AnimalProvider : IAnimalProvider
     {
-        public AnimalProvider()
+        private readonly IConfigService _config;
+        public AnimalProvider(IConfigService config)
         {
+            _config = config;
+
             AllAnimals = new Animal[]
             {
                 new Feline
@@ -53,8 +57,18 @@ namespace Modul2HW4.Providers
                     Weight = 1.2
                 }
             };
+            GetUnits();
         }
 
         public Animal[] AllAnimals { get; set; }
+
+        private void GetUnits()
+        {
+            foreach (var item in AllAnimals)
+            {
+                item.SpeedUnits = _config.ConfigSettings.CurrentSpeedUnits;
+                item.WeightUnits = _config.ConfigSettings.CurrentWeightUnits;
+            }
+        }
     }
 }

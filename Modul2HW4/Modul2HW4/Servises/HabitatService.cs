@@ -8,14 +8,14 @@ namespace Modul2HW4.Servises
     public class HabitatService : IHabitatService
     {
         private readonly IConfigService _config;
-        private readonly IAnimalProvider _animalProvider;
+        private readonly IAnimalService _animalService;
         private Animal[] _habitat;
         private int _counter = 0;
 
-        public HabitatService(IAnimalProvider animalProvider, IConfigService config)
+        public HabitatService(IAnimalService animalService, IConfigService config)
         {
             _config = config;
-            _animalProvider = animalProvider;
+            _animalService = animalService;
             _habitat = new Animal[_config.MaxAnimalsInHabitat];
             AnimalsInHabitat = _habitat;
         }
@@ -23,7 +23,7 @@ namespace Modul2HW4.Servises
         public Animal[] AnimalsInHabitat { get; }
         public void Add(string name)
         {
-            _habitat[_counter] = _animalProvider.AllAnimals.FindByName(name);
+            _habitat[_counter] = _animalService.Animals.FindByName(name);
             _counter++;
         }
 

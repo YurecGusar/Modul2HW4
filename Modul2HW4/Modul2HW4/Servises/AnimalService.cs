@@ -14,7 +14,16 @@ namespace Modul2HW4.Servises
         {
             _config = config;
             _animalProvider = animalProvider;
-            Convert(_animalProvider.AllAnimals);
+            Animals = GetAll();
+        }
+
+        public Animal[] Animals { get; }
+
+        public Animal[] GetAll()
+        {
+            var animals = _animalProvider.AllAnimals;
+            Convert(animals);
+            return animals;
         }
 
         public void Convert(Animal[] animals)

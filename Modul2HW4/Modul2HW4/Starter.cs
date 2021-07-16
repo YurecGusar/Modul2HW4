@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using Modul2HW4.Extension;
 using Modul2HW4.Providers.Abstractions;
 using Modul2HW4.Servises.Abstractions;
@@ -28,7 +27,7 @@ namespace Modul2HW4
             {
                 if (item != null)
                 {
-                    Console.WriteLine(item.Name);
+                    Console.WriteLine($"{item.Name} {item.Speed} {item.SpeedUnits}");
                 }
             }
         }
