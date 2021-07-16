@@ -8,6 +8,6 @@ namespace Modul2HW4.Servises.Abstractions
 {
     public interface IAnimalService
     {
-        public void Convert();
+        public void Convert(Animal[] animals);
     }
 }

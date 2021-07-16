@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Modul2HW4.Extension;
 using Modul2HW4.Providers.Abstractions;
 using Modul2HW4.Servises.Abstractions;
@@ -7,10 +8,12 @@ namespace Modul2HW4
 {
     public class Starter
     {
+        private readonly IAnimalService _animalServ;
         private readonly IAnimalProvider _animalProvider;
         private readonly IHabitatService _habitat;
-        public Starter(IAnimalProvider animalProvider, IHabitatService habitatService)
+        public Starter(IAnimalProvider animalProvider, IHabitatService habitatService, IAnimalService animalService)
         {
+            _animalServ = animalService;
             _animalProvider = animalProvider;
             _habitat = habitatService;
         }
@@ -20,6 +23,14 @@ namespace Modul2HW4
             _habitat.Add("Юго-западный африканский лев");
             _habitat.Add("Шакал обыкновенный");
             Console.WriteLine(_habitat.AnimalsInHabitat.FindByName("Шакал обыкновенный") is Canine);
+            Array.Sort(_habitat.AnimalsInHabitat, new AnimalSortExtension());
+            foreach (var item in _habitat.AnimalsInHabitat)
+            {
+                if (item != null)
+                {
+                    Console.WriteLine(item.Name);
+                }
+            }
         }
     }
 }

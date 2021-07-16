@@ -8,7 +8,7 @@ namespace Modul2HW4
         public double Weight { get; set; }
         public double Speed { get; set; }
         public Sex Sex { get; set; }
-        public WeightUnits[] WeightUnits { get; set; }
-        public SpeedUnits[] SpeedUnits { get; set; }
+        public WeightUnits WeightUnits { get; set; }
+        public SpeedUnits SpeedUnits { get; set; }
     }
 }
