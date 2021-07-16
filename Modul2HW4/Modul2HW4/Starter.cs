@@ -21,6 +21,7 @@ namespace Modul2HW4
         {
             _habitat.Add("Юго-западный африканский лев");
             _habitat.Add("Шакал обыкновенный");
+            _habitat.Add("Дорпер");
             Console.WriteLine(_habitat.AnimalsInHabitat.FindByName("Шакал обыкновенный") as Canine);
             Array.Sort(_habitat.AnimalsInHabitat, new AnimalSortExtension());
             foreach (var item in _habitat.AnimalsInHabitat)

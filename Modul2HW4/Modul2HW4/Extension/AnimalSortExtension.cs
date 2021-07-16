@@ -15,11 +15,11 @@ namespace Modul2HW4.Extension
             var a2 = animal2 as Animal;
             if (a1 != null && a2 != null)
             {
-                if (a1.Name.Length > a2.Name.Length)
+                if (a1.Speed > a2.Speed)
                 {
                     return 1;
                 }
-                else if (a1.Name.Length < a2.Name.Length)
+                else if (a1.Speed < a2.Speed)
                 {
                     return -1;
                 }
