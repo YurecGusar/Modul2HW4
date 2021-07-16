@@ -15,7 +15,7 @@ namespace Modul2HW4.Servises
 
         public int MaxAnimalsInHabitat { get; }
         public Config.ConfigSettings ConfigSettings { get; }
-        public Config.Config GetConfig()
+        private Config.Config GetConfig()
         {
             return new Config.Config
             {

@@ -18,6 +18,7 @@ namespace Modul2HW4
                 .AddTransient<IAnimalProvider, AnimalProvider>()
                 .AddSingleton<IHabitatService, HabitatService>()
                 .AddSingleton<IConfigService, ConfigService>()
+                .AddTransient<IComparer, AnimalSortExtension>()
                 .BuildServiceProvider();
             var start = serviceProvider.GetService<Starter>();
             start.Run();

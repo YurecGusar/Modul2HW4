@@ -50,7 +50,7 @@ namespace Modul2HW4.Providers
                 },
                 new Bird
                 {
-                    Name = "Eagle",
+                    Name = "Орел",
                     HasFlyingSkill = true,
                     Sex = Sex.FEMALE,
                     Speed = 42,

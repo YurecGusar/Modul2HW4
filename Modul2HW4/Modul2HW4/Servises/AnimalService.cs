@@ -19,14 +19,14 @@ namespace Modul2HW4.Servises
 
         public Animal[] Animals { get; }
 
-        public Animal[] GetAll()
+        private Animal[] GetAll()
         {
             var animals = _animalProvider.AllAnimals;
             Convert(animals);
             return animals;
         }
 
-        public void Convert(Animal[] animals)
+        private void Convert(Animal[] animals)
         {
             foreach (var item in animals)
             {
@@ -37,7 +37,7 @@ namespace Modul2HW4.Servises
             }
         }
 
-        public WeightUnitsData GetWeightData(WeightUnits weightUnits)
+        private WeightUnitsData GetWeightData(WeightUnits weightUnits)
         {
             foreach (var item in _config.ConfigSettings.WeightUnitsDatas)
             {
@@ -50,7 +50,7 @@ namespace Modul2HW4.Servises
             return null;
         }
 
-        public SpeedUnitsData GetSpeedData(SpeedUnits speedUnits)
+        private SpeedUnitsData GetSpeedData(SpeedUnits speedUnits)
         {
             foreach (var item in _config.ConfigSettings.SpeedUnitsDatas)
             {

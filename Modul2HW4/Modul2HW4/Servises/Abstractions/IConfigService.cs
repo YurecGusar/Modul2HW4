@@ -6,6 +6,5 @@ namespace Modul2HW4.Servises.Abstractions
     {
         public int MaxAnimalsInHabitat { get; }
         public Config.ConfigSettings ConfigSettings { get; }
-        public Config.Config GetConfig();
     }
 }
