@@ -11,8 +11,8 @@ namespace Modul2HW4.Extension
     {
         public int Compare(object animal1, object animal2)
         {
-            var a1 = (Animal)animal1;
-            var a2 = (Animal)animal2;
+            var a1 = animal1 as Animal;
+            var a2 = animal2 as Animal;
             if (a1 != null && a2 != null)
             {
                 if (a1.Name.Length > a2.Name.Length)
